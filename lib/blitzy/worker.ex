@@ -10,6 +10,7 @@ defmodule Blitzy.Worker do
   end
 
   def query(url) do
+    IO.puts "Running query on node-#{node()}"
     {time, result} = Timex.Duration.measure(HTTPoison, :get, [url])
     handle_response(Timex.Duration.to_milliseconds(time), result)
   end

@@ -1,18 +1,7 @@
 defmodule Blitzy do
-  @moduledoc """
-  Documentation for Blitzy.
-  """
+  use Application
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Blitzy.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def start(_type, _args) do
+    Blitzy.Supervisor.start_link(:ok)
   end
 end
